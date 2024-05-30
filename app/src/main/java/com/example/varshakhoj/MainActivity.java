@@ -24,15 +24,14 @@ public class MainActivity extends AppCompatActivity {
     public ListView lv_weather_report;
     private ArrayList<String> weatherData;
     private ArrayAdapter<String> adapter;
-    private final String API_key = "YOUR_API_KEY";
+    private final String API_key = "68a9686d39f344a89a121652243005";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         //Assign values to each control on the layout.
-        get_city_ID = findViewById(R.id.btn_get_city_ID);
-        use_city_ID = findViewById(R.id.btn_use_City_ID);
+
         use_name = findViewById(R.id.btn_use_name);
 
         et_textview = findViewById(R.id.et_data_input);
@@ -40,13 +39,10 @@ public class MainActivity extends AppCompatActivity {
 
         //Array to store weather data
         weatherData = new ArrayList<>();
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, weatherData);
+        adapter = new ArrayAdapter<>(this, R.layout.list_item, weatherData);
         lv_weather_report.setAdapter(adapter);
         //Set onClickListener
-        use_city_ID.setOnClickListener(v1 ->
-        {
 
-        });
         use_name.setOnClickListener(v13 ->
         {
             String city = et_textview.getText().toString();
