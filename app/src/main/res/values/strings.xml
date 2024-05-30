@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Varsha Khoj</string>
+    <string name="city_ID">Get City ID</string>
+    <string name="use_c_ID">Use City ID</string>
+    <string name="u_n">Use Name</string>
+</resources>
