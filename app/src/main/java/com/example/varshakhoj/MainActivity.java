@@ -90,15 +90,24 @@ public class MainActivity extends AppCompatActivity {
             weatherData.clear();
 
             JSONObject jsonObject = new JSONObject(response);
+            JSONObject location = jsonObject.getJSONObject("location");
+            String cityName = location.getString("name");
+            String country = location.getString("country");
+            String region = location.getString("region");
+
             JSONObject current = jsonObject.getJSONObject("current");
             String tempC = current.getString("temp_c");
             String condition = current.getJSONObject("condition").getString("text");
             String humidity = current.getString("humidity");
+            String tempF = current.getString("temp_f");
 
+            weatherData.add("City: " + cityName);
+            weatherData.add("Country: " + country);
+            weatherData.add("Region: " + region);
             weatherData.add("Temperature: " + tempC + "°C");
             weatherData.add("Condition: " + condition);
             weatherData.add("Humidity: " + humidity + "%");
-
+            weatherData.add("Temperature F: " + tempF + "°F");
 
             adapter.notifyDataSetChanged();
         } catch (Exception e) {
