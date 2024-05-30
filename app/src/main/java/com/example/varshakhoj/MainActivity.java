@@ -3,17 +3,13 @@ package com.example.varshakhoj;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -28,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     public ListView lv_weather_report;
     private ArrayList<String> weatherData;
     private ArrayAdapter<String> adapter;
-    private final String API_key = "68a9686d39f344a89a121652243005";
+    private final String API_key = "YOUR_API_KEY";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,19 +63,11 @@ public class MainActivity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(this);
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        parseAndDisplayWeather(response);
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        weatherData.clear();
-                        weatherData.add("Error: " + error.toString());
-                        adapter.notifyDataSetChanged();
-                    }
+                this::parseAndDisplayWeather,
+                error -> {
+                    weatherData.clear();
+                    weatherData.add("Error: " + error.toString());
+                    adapter.notifyDataSetChanged();
                 });
 
         queue.add(stringRequest);

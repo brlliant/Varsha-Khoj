@@ -7,44 +7,30 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btn_get_city_ID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/city_ID"
-        app:layout_constraintEnd_toStartOf="@+id/btn_use_City_ID"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btn_use_City_ID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/use_c_ID"
-        app:layout_constraintStart_toEndOf="@+id/btn_get_city_ID"
-        app:layout_constraintEnd_toStartOf="@id/btn_use_name"
-        app:layout_constraintTop_toTopOf="@id/btn_get_city_ID"/>
-
-    <Button
-        android:id="@+id/btn_use_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/u_n"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/btn_use_City_ID"
-        app:layout_constraintStart_toEndOf="@id/btn_use_City_ID"/>
 
     <EditText
         android:id="@+id/et_data_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="City name"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_get_city_ID" />
+        tools:layout_editor_absoluteY="2dp" />
+
+
+    <Button
+        android:id="@+id/btn_use_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/u_n"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.006"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_data_input" />
 
     <ListView
         android:id="@+id/lv_weather_reports"
@@ -53,6 +39,6 @@
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_data_input" />
+        app:layout_constraintTop_toBottomOf="@id/btn_use_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
