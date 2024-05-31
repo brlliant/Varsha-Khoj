@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "248421502167",
+    "project_id": "varsha-khoj-9971e",
+    "storage_bucket": "varsha-khoj-9971e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:248421502167:android:d5d4b18b661fa51010b492",
+        "android_client_info": {
+          "package_name": "com.example.varshakhoj"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlHwqZ_pE1bvwohX8F5LhCzOki8RxmlDg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
